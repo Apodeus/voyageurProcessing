@@ -96,7 +96,10 @@ void generatePoints(int** tab, int len){
 }
 
 int main(int argc, char* argv[]){
-	int total = 10;
+	int total = 5;
+	if(argc >= 2)
+		total = atoi(argv[1]);
+	
 	int* ordre = (int*)malloc(sizeof(int)*total);
 	int* bestPath = (int*)malloc(sizeof(int)*total);
 	int** points = create2DTable(total, 2);
