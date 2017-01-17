@@ -66,18 +66,12 @@ void dispArray(int* array, int len){
 }
 
 void dispArray2D(int** tab, int len){
-	for(int i = 0; i < len; i ++){
+	for(int i = 0; i < len; i ++)
 		printf("t[%d] = (%d;%d)\n", i, tab[i][0], tab[i][1]);
-	}
-
 }
 
-void setup(int* ordre){
 
-
-}
-
-int **createTable(int nbLin, int nbCol){
+int **create2DTable(int nbLin, int nbCol){
 	int **tableau = (int **)malloc(sizeof(int*)*nbLin);
 	int *tableau2 = (int *)malloc(sizeof(int)*nbCol*nbLin);
 	for(int i = 0 ; i < nbLin ; i++){
@@ -105,7 +99,7 @@ int main(int argc, char* argv[]){
 	int total = 10;
 	int* ordre = (int*)malloc(sizeof(int)*total);
 	int* bestPath = (int*)malloc(sizeof(int)*total);
-	int** points = createTable(total, 2);
+	int** points = create2DTable(total, 2);
 
 	for(int i = 0; i < total; i++)
 		ordre[i] = i;
